@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202404101022
+      author: Turgud Guliyev
+      changes:
+        - createTable:
+            tableName: meetups
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: NUMERIC(16, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: event_date
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(32)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    defaultValue: now()
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
